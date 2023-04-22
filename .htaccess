@@ -1,0 +1,22 @@
+# Turn rewrite engine on
+Options +FollowSymlinks
+RewriteEngine on
+
+# map neat URL to internal URL
+RewriteRule ^connexion/$   index.php?action=authentification [nc]
+RewriteRule ^utilisateur/([0-9]+)/$   index.php?data=utilisateur&idUser=$1 [nc,qsa]
+RewriteRule ^produits/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)/$   index.php?data=produits&debut=$1&fin=$2&categ=$3&asc=$4&aCommander=$5 [nc,qsa]
+RewriteRule ^produit/([0-9]+)/$   index.php?data=produit&idProduit=$1 [nc,qsa]
+RewriteRule ^produit/seuil/$   index.php?action=seuil [nc]
+RewriteRule ^categories/$   index.php?data=categories [nc]
+RewriteRule ^statuts/$   index.php?data=statuts [nc]
+RewriteRule ^statuts/([0-9]+)/$   index.php?data=statutsCommande&idCommande=$1 [nc,qsa]
+RewriteRule ^commande/detail/([0-9]+)/$   index.php?data=detailsCommande&idCommande=$1 [nc,qsa]
+RewriteRule ^commande/([0-9]+)/$   index.php?data=commande&idCommande=$1 [nc,qsa]
+RewriteRule ^commande/existe/([0-9]+)/$   index.php?data=commandeExiste&idCommande=$1 [nc,qsa]
+RewriteRule ^commande/statut/$   index.php?action=statut [nc]
+RewriteRule ^pays/$   index.php?data=pays [nc]
+
+
+
+
